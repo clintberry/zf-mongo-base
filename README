@@ -45,6 +45,12 @@ These two commands do the same thing:
    $myVisitor->referrer = array("url"=>"www.google.com");
    
    
+Load one visitor
+
+$myLoadedVisitor = Model_Visitor::findOne();
+
+
+   
 License Information
 -------------------
 
