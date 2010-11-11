@@ -1,0 +1,47 @@
+zf-mongo-base
+by Clint Berry (http://clintberry.com)
+------------------------------------------------------------------------------
+
+This is a base class for MongoDB written for Zend Framework models. It is for
+use where a model file will be created for a collection in Mongo. It gives an
+Active Directory way of manipulating objects.
+
+This class uses late static binding, so PHP 5.3 is required
+
+
+Installation:
+
+  - Create a directory in your application's Library directory named "Mongo" 
+      and place the ModelBase.php file in it.
+  - Change the connection settings in ModelBase.php file to match your MongoDB 
+      settings.
+  - Create a model class that inherits the base class
+
+EXAMPLE USAGE
+
+I created a Visitor model in Zend framework for basic analytics:
+
+  class Model_Visitor extends Mongo_ModelBase {
+      // You can set the collection name explicitly, or it will auto generate 
+      // by the name of your model (e.g. Model_Visitor would be the 
+      // "visitor" collection
+      public static $__collectionName = "visitor";
+  }
+
+Then when I need to create a new visitor I simply create a new instance 
+of my model:
+
+    $myVisitor = new Model_Visitor();
+    
+    $myVisitor->ipAddress = "55.55.55.55";
+    $myVisitor->browser = "Firefox";
+    $myVisitor->save();
+
+
+Use the dot notation to access and set nested elements
+
+These two commands do the same thing:
+   $myVisitor->{'referrer.url'} = "www.google.com";
+   $myVisitor->referrer = array("url"=>"www.google.com");
+   
+   

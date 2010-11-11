@@ -1,13 +1,13 @@
 <?php
 
-class Mongo_Base {
+class Mongo_ModelBase {
     
     public static $_mongo = null;
     public static $_collection = null;
     public static $_collectionName = null;
     
     const DB_SERVER = 'localhost';
-    const DB_NAME = 'cdwe';
+    const DB_NAME = 'db';
     const DB_PORT = '27017';
     
     protected $id = null;
