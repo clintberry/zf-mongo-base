@@ -8,6 +8,7 @@ Active Directory way of manipulating objects.
 
 This class uses late static binding, so PHP 5.3 is required
 
+Let me know if this is file is useful for you! 
 
 Installation:
 
@@ -45,12 +46,20 @@ These two commands do the same thing:
    $myVisitor->referrer = array("url"=>"www.google.com");
    
    
-Load one visitor
+Load one visitor:
 
 $myLoadedVisitor = Model_Visitor::findOne();
 
 
-   
+Load all visitors:
+
+$visitorArray = Model_Visitor::find();
+
+
+Find visitors by IP:
+
+$visitorArray = Model_Visitor::find(array("ip"=>"55.5.5.5"));
+
 License Information
 -------------------
 
