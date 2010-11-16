@@ -278,11 +278,21 @@ class Mongo_ModelBase {
     }
     
     /**
-     * Insert new document into collection
+     * 
+     * Enter description here ...
      * @param array $data
+     * @param bool $safe // Set true if you want to wait for database response...
+     * @param bool $fsync
      */
-    public static function insert($data, $safe = false){
+    public static function insert($data, $safe = false, $fsync = false){
         static::init();
+        $options = array();
+        if($safe){
+            $options['safe'] = true;
+        }
+        if($fsync){
+            $options['fsync'] = true;
+        }
         return static::$_collection->insert($data, $options);
     }
     
