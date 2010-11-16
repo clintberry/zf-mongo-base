@@ -301,10 +301,12 @@ class Mongo_ModelBase {
      * @param array $data
      */
     public static function batchInsert($data){
+        static::init();
         return static::$_collection->batchInsert($data);
     }
 
     public static function update($criteria, $update, $options = array()){
+        static::init();
         return static::$_collection->update($criteria, $update, $options);
     }
 }
