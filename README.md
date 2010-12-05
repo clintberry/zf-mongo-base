@@ -22,12 +22,12 @@ Example Usage
 -------------
 I created a Visitor model in Zend Framework for basic analytics:
 
->    class Model_Visitor extends Mongo_ModelBase {
->        // You can set the collection name explicitly, or it will auto generate 
->        // by the name of your model (e.g. Model_Visitor would be the 
->        // "visitor" collection
->        public static $_collectionName = "visitor";
->    }
+    class Model_Visitor extends Mongo_ModelBase {
+        // You can set the collection name explicitly, or it will auto generate 
+        // by the name of your model (e.g. Model_Visitor would be the 
+        // "visitor" collection
+        public static $_collectionName = "visitor";
+    }
 
 Then when I need to create a new visitor I simply create a new instance 
 of my model:
@@ -42,8 +42,8 @@ of my model:
 Use the dot notation to access and set nested elements
 These two commands do the same thing:
 
-   $myVisitor->{'referrer.url'} = "www.google.com";
-   $myVisitor->referrer = array("url"=>"www.google.com");
+    $myVisitor->{'referrer.url'} = "www.google.com";
+    $myVisitor->referrer = array("url"=>"www.google.com");
    
    
 __Load one visitor__
