@@ -22,12 +22,12 @@ Example Usage
 -------------
 I created a Visitor model in Zend Framework for basic analytics:
 
-  class Model_Visitor extends Mongo_ModelBase {
-      // You can set the collection name explicitly, or it will auto generate 
-      // by the name of your model (e.g. Model_Visitor would be the 
-      // "visitor" collection
-      public static $_collectionName = "visitor";
-  }
+>    class Model_Visitor extends Mongo_ModelBase {
+>        // You can set the collection name explicitly, or it will auto generate 
+>        // by the name of your model (e.g. Model_Visitor would be the 
+>        // "visitor" collection
+>        public static $_collectionName = "visitor";
+>    }
 
 Then when I need to create a new visitor I simply create a new instance 
 of my model:
@@ -63,7 +63,7 @@ __Find visitors by IP__
 License Information
 -------------------
 
-Copyright 2010 Clint Berry [(http://clintberry.com)](http://clintberry.com)
+Copyright 2010 [Clint Berry](http://clintberry.com)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
